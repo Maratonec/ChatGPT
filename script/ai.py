@@ -1,6 +1,5 @@
 import os
 import openai
-import script.client as client
 #Setup variables
 api_key = "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"
 api_model = "text-davinci-003"
