@@ -1,7 +1,7 @@
 import os
 import openai
 #Setup variables
-api_key = "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"
+api_key = "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"
 api_model = "text-davinci-003"
 print("AI is running...")
 #Set api key
@@ -9,6 +9,7 @@ openai.api_key = api_key
 #User prompt
 def requestAI(user_prompt):
   openai.api_key = api_key
+  print(user_prompt)
   #Data
   response = openai.Completion.create(
     model=api_model,

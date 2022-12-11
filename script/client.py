@@ -1,8 +1,8 @@
 import discord
 from discord.ext import commands
-import ai
+from ai import requestAI
 description = 'A bot that does stuff.'
-token = 'MTA1MTYwNTg4OTcyNDk3MzE0Nw.GgeSAO.9jksnPQXFFIKNC9voNvY_gjJorNxjm61oEY1M8'
+token = 'MTA1MTYwNTg4OTcyNDk3MzE0Nw.GW3TIP.4qhCn-YbTm4NALurtyqwKVe6VTkbGrxKRY5qfs'
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
