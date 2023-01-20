@@ -7,6 +7,8 @@ mydb = mysql.connector.connect(
     password="chatgpt",
     database="chatgpt"
 )
+#Print if successful
+print(mydb)
 
 # Create a cursor
 mycursor = mydb.cursor()
@@ -25,7 +27,7 @@ def update_record(guild, ai_key, token):
     val = (ai_key, token, guild)
     mycursor.execute(sql, val)
     mydb.commit()
-    print(mycursor.rowcount, "record(s) affected")
+    print(mycursor.rowcount, "record(s) affected by ", guild, "")
 
 #Read a record
 def read_record(guild):
@@ -33,5 +35,4 @@ def read_record(guild):
     val = (guild,)
     mycursor.execute(sql, val)
     myresult = mycursor.fetchall()
-    for x in myresult:
-        print(x)
+    return myresult
