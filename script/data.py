@@ -1,10 +1,14 @@
 import mysql.connector
-
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 # Connect to the database
 mydb = mysql.connector.connect(
     host="localhost",
     user="admin",
-    password="chatgpt",
+    password=os.getenv('DATABASE_PASSWORD'),
     database="chatgpt"
 )
 #Print if successful

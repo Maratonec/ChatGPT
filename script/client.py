@@ -2,11 +2,18 @@ import discord
 import data
 from discord import option
 from ai import requestAI
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 description = "ChatGPT is a Discord bot that uses OpenAI\'s GPT-3 API to generate responses to user prompts."
-token = 'MTA1MTYwNTg4OTcyNDk3MzE0Nw.GW3TIP.4qhCn-YbTm4NALurtyqwKVe6VTkbGrxKRY5qfs'
+token = os.getenv('BOT_TOKEN')
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
+
+
 
 bot = discord.Bot(command_prefix='/', description=description, intents=intents)
 #Request response from AI

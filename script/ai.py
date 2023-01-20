@@ -1,7 +1,7 @@
 import os
 import openai
 #Setup variables
-backup_api_key = "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"
+backup_api_key = "nomne"
 api_model = "text-davinci-003"
 print("AI is running...")
 #Set api key
