@@ -1,5 +1,5 @@
 #ignore .env files for security reasons
 *.env
 #IDE files
-.vscode/
-script/__pycache__/
+.vscode/*
+__pycache__/*
