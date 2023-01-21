@@ -1,7 +1,7 @@
 # Usage
 You can either use the bot by inviting it to you discord server using this link: 
 
-https://discord.com/api/oauth2/authorize?client_id=1051605889724973147&permissions=2147486720&scope=bot
+http://bot.maratonec.live
 
 Or self-host it using your own computer, by cloning this respository. **Note that by self-hosting the bot, or modifying the bot, you must abide by the bot's license. See LICENSE for more.**
 # Commands
