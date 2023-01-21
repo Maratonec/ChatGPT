@@ -16,6 +16,7 @@ intents.members = True
 
 
 bot = discord.Bot(command_prefix='/', description=description, intents=intents)
+
 #Request response from AI
 @bot.slash_command(name="ai")
 @option(
@@ -67,10 +68,26 @@ async def settoken(ctx, token : str):
 @bot.event
 async def on_guild_join(guild):
     data.insert_record(guild.id, "invalid", 500)
+    #write welcome message to chat
+    for channel in guild.text_channels:
+        if channel.permissions_for(guild.me).send_messages:
+            await channel.send("Thanks for inviting me to your server! Please use /setkey to set your API key. Without an API key, the bot will not work. You can get an API key from https://beta.openai.com/account/api-keys. You can also use /settoken to set the token. The token is the maximum number of tokens that the AI will generate. If you set the token to 500, the AI will generate a maximum of 500 tokens.")
+            break
     print("Record created for " + guild.name)
 
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user}')
+    for guild in bot.guilds:
+        if data.read_record(guild.id) == []:
+            data.insert_record(guild.id, "invalid", 500)
+
+#Error handler for ai command
+@ai.error
+async def ai_error(ctx, error):
+    #Respond with error message specified in the error handler
+    await ctx.send(error)
+
+
 
 bot.run(token)

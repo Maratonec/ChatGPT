@@ -14,8 +14,15 @@ mydb = mysql.connector.connect(
 #Print if successful
 print(mydb)
 
+
 # Create a cursor
 mycursor = mydb.cursor()
+
+#Create a table named settings if it does not exist with text for guild and ai_key, int for token and auto increment for id, id should last as it is used to identify the record
+mycursor.execute("CREATE TABLE IF NOT EXISTS settings (guild TEXT, ai_key TEXT, token INT, id INT AUTO_INCREMENT PRIMARY KEY)")
+
+
+
 
 #Inserting a record
 def insert_record(guild, ai_key, token):
