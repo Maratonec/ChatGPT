@@ -9,4 +9,4 @@ Or self-host it using your own computer, by cloning this respository. **Note tha
 # Commands
 To get started you must set an OpenAPI key, which you can find after creating account here: https://beta.openai.com/account/api-keys. Then run the command `/setkey` and paste your api key ther.
 After that you are done and can use the bot with `/ai`.
-One more setting you can change is the maximum number of tokens the bot can use per answer. Default is 500 and recommended range is 200-2000. For that use the command `/settoken`. You must also set the database name, user, password and discord bot token in an .env file.
+One more setting you can change is the maximum number of tokens the bot can use per answer. Default is 500 and recommended range is 200-2000. For that use the command `/settoken`. You must also set the database name, host, user, password and discord bot token in an .env file.
