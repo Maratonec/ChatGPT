@@ -1,5 +1,8 @@
-#ignore .env files for security reasons
+#.env files for security reasons
 *.env
-#IDE files
-.vscode/*
-__pycache__/*
+#pycache folder
+__pycache__/
+#vscode settings
+.vscode/
+#git files
+.git/
