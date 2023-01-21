@@ -6,10 +6,10 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 # Connect to the database
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="admin",
+    host=os.getenv('DATABASE_HOST'),
+    user=os.getenv('DATABASE_USER'),
     password=os.getenv('DATABASE_PASSWORD'),
-    database="chatgpt"
+    database=os.getenv('DATABASE_NAME')
 )
 #Print if successful
 print(mydb)
