@@ -1,3 +1,5 @@
+![Usage example](https://i.imgur.com/sxyyHgW.png "Usage example")
+
 # Usage
 You can either use the bot by inviting it to you discord server using this link: 
 
