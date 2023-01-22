@@ -17,6 +17,18 @@ intents.members = True
 
 bot = discord.Bot(command_prefix='/', description=description, intents=intents)
 
+#Help
+@bot.slash_command(name="help")
+async def help(ctx):
+    embed = discord.Embed(title="ChatGPT", description="ChatGPT is a Discord bot that uses OpenAI\'s GPT-3 API to generate responses to user prompts.", color=0x00ff00)
+    embed.add_field(name="/ai", value="Generate a response to your prompt.", inline=False)
+    embed.add_field(name="/setkey", value="Set your API key.", inline=False)
+    embed.add_field(name="/settoken", value="Set the maximum number of tokens that the AI will generate.", inline=False)
+    embed.add_field(name="/help", value="Show this message.", inline=False)
+
+    await ctx.send(embed=embed)
+
+
 #Request response from AI
 @bot.slash_command(name="ai")
 @option(
@@ -28,6 +40,7 @@ async def ai(ctx, message : str):
     #If no API key is set
     if data.read_record(ctx.guild.id)[0][1] == "invalid":
         await ctx.respond("No API key has been set. Please use /setkey to set your API key.")
+        return
     await ctx.response.defer()
     await ctx.followup.send(requestAI(message, data.read_record(ctx.guild.id)[0][1], data.read_record(ctx.guild.id)[0][2]))
 
